@@ -25,7 +25,7 @@ public class Main {
         System.out.println("--Coin Change--");
         System.out.println("Enter a change value: ");
         int c = reader.nextInt();
-        int min = findMinChangeCoins (c, 0);
+        int min = findMinChangeCoins (c, S.length);
         System.out.println(min);
 
     }
@@ -53,7 +53,7 @@ public class Main {
                 int temp = findMinChangeCoins( C- S[i], S.length);
 
                 // see if result can minimized
-                if (temp + 1 < res)
+                if (temp != Integer.MAX_VALUE && temp + 1 < res)
                     res = temp + 1;
             }
         }

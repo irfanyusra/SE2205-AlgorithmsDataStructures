@@ -1,7 +1,7 @@
 //Recursion: 5.1, 5.2, 5.5, 5.7, 5.10, 5.17, 5.18, 5.21, 5.23
 
 
-public class Main {
+public class Recursion {
 
 	public static void main(String[] args) {
 		int[] array = { 1, 3, 6, 4, 7, 4 };

@@ -25,16 +25,30 @@ public class Main {
         System.out.println("--Coin Change--");
         System.out.println("Enter a change value: ");
         int c = reader.nextInt();
-        int min = findMinChangeCoins (c, S.length);
+        int min = findMinChangeCoins (c, S.length-1,1000);//coin needed and array of change 
         System.out.println(min);
 
     }
 //understand it better
-    public static int findMinChangeCoins(int C, int n){
-        if (C == 0)
-            return 1;
-        if (C < 0)
+    public static int findMinChangeCoins(int C, int n, int temp){
+    	int res;
+    	int combo = 0;
+        if (C <= 0 )
             return 0;
+        if (n==-1)
+        	return 0;
+       
+        	while (C>=S[n]) {
+        		C=C-S[n];
+        		combo++;
+        	}
+        	res= combo + findMinChangeCoins(C, n-1,temp);
+       if (res<temp) {
+    	   temp = res;
+    	   findMinChangeCoins(C, n-1,temp);
+       }
+       return temp;
+        
 
        /* int combo=0;
         int minCombo = 0;
@@ -43,10 +57,10 @@ public class Main {
         }
         return combo;*/
         // Initialize result
-        int res=Integer.MAX_VALUE;
+        //int res=Integer.MAX_VALUE;
 
         // Try every coin that has smaller value than C
-        for (int i=0; i<S.length ; i++)
+        /*for (int i=0; i<S.length ; i++)
         {
             if (S[i] <= C)
             {
@@ -57,7 +71,7 @@ public class Main {
                     res = temp + 1;
             }
         }
-        return res;
+        return res;*/
     }
 
 

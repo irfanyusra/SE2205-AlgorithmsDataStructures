@@ -44,6 +44,7 @@ public class SQueue<E> implements Queue<E> {
 	@Override
 	public E dequeue() {
 		// TODO Auto-generated method stub
+		size--;
 		return stack1.pop();
 	}
 

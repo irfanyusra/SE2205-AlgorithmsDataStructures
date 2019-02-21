@@ -12,7 +12,7 @@
 public class Test {
 
 	public static void main(String[] args) {
-		SQueue<Integer> queue=new SQueue <Integer>();
+		/*SQueue<Integer> queue=new SQueue <Integer>();
 		queue.enqueue(1);
 		queue.enqueue(2);
 		queue.enqueue(3);
@@ -22,8 +22,18 @@ public class Test {
 		System.out.println(queue.dequeue());
 		System.out.println(queue.dequeue());
 		System.out.println(queue.dequeue());
-		System.out.println(queue.dequeue());
+		System.out.println(queue.dequeue());*/
 
-	}
+		QStack<Integer> stack=new QStack <Integer>();
+		stack.push(1);
+		stack.push(2);
+	
+		stack.push(3);
+		stack.push(4);
+		System.out.println(stack.pop());
+		System.out.println(stack.top());
+		
+		
+}
 
 }
